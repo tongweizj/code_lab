@@ -1,0 +1,8 @@
+{
+    "env": {
+        "MONGO_USER": "express-demo",
+        "MONGO_PASSWORD": "express-demo",
+        "MONGO_DB": "express-demo",
+        "MONGO_URL": "192.168.0.100:27017"
+    }
+}
