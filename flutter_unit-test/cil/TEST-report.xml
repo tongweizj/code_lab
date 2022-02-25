@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite errors="0" failures="0" tests="1" skipped="0" name="test.cil" timestamp="2021-01-10T22:55:34">
+    <properties>
+      <property name="platform" value="vm"/>
+    </properties>
+    <testcase classname="test.cil" name="calculate" time="0.021"/>
+  </testsuite>
+</testsuites>
