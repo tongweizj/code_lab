@@ -12,11 +12,17 @@ module.exports = appInfo => {
    **/
   const config = exports = {};
 
+  // 测试阶段,关闭 csrf
+  config.security = {
+    csrf: {
+      enable: false,
+    },
+  };
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1665590038806_8160';
 
   // add your middleware config here
-  config.middleware = [];
+  config.middleware = [ 'counter' ];
 
   // add your user config here
   const userConfig = {

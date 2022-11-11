@@ -9,4 +9,7 @@ module.exports = app => {
   router.get('/jspang', controller.jspang.jspang);
   router.get('/getGirls', controller.jspang.getGirls);
   router.get('/getGirl', controller.jspang.getGirl);
+  router.get('/getGirl2/:name/:age', controller.jspang.getGirl2);
+  router.post('/add', controller.jspang.add);
+
 };
