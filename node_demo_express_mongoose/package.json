@@ -1,0 +1,73 @@
+{
+  "name": "nodejs-express-mongoose-demo",
+  "description": "A demo app illustrating the usage of express, mongoose, passportjs, pug and other modules in nodejs",
+  "keywords": [
+    "express",
+    "mongoose",
+    "mongodb",
+    "passport",
+    "demo"
+  ],
+  "version": "4.0.0",
+  "private": false,
+  "author": "Madhusudhan Srinivasa <madhums8@gmail.com> (http://madhums.github.com)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/madhums/node-express-mongoose-demo.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "scripts": {
+    "start": "cross-env NODE_ENV=development nodemon server.js",
+    "debug": "cross-env NODE_ENV=development nodemon --debug server.js",
+    "test": "cross-env NODE_ENV=test babel-tape-runner test/test-*.js",
+    "prod": "pm2-runtime start ecosystem.config.js --env production"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "~1.19.0",
+    "co": "~4.6.0",
+    "compression": "~1.7.4",
+    "connect-flash": "~0.1.1",
+    "connect-mongo": "~4.4.1",
+    "cookie-parser": "~1.4.5",
+    "cors": "~2.8.5",
+    "cross-env": "~7.0.3",
+    "csurf": "~1.11.0",
+    "dotenv": "~10.0.0",
+    "express": "~4.17.1",
+    "express-session": "~1.17.2",
+    "helmet": "~4.6.0",
+    "method-override": "~3.0.0",
+    "mongoose": "~5.13.3",
+    "morgan": "~1.10.0",
+    "multer": "~1.4.2",
+    "notifier": "^0.1.7",
+    "only": "0.0.2",
+    "passport": "~0.4.1",
+    "passport-github": "~1.1.0",
+    "passport-google-oauth": "~2.0.0",
+    "passport-linkedin": "~1.0.0",
+    "passport-local": "~1.0.0",
+    "passport-twitter": "^0.1.5",
+    "pm2": "~5.1.0",
+    "pug": "~3.0.2",
+    "ultimate-pagination": "~1.0.0",
+    "view-helpers": "~0.2.0",
+    "winston": "~3.3.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "~10.1.0",
+    "babel-tape-runner": "~3.0.0",
+    "eslint": "~7.31.0",
+    "eslint-config-prettier": "~8.3.0",
+    "eslint-plugin-prettier": "~3.4.0",
+    "nodemon": "2.0.12",
+    "npm-check-updates": "~11.8.3",
+    "prettier": "~2.3.2",
+    "supertest": "*",
+    "tape": "~5.2.2"
+  }
+}
