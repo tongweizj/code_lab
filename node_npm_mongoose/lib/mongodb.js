@@ -4,13 +4,14 @@
 // import { Log } from './index.js';
 // const Log = () => {} // Use this Log function logs will disappear
 
-import { Kitten } from './models/kitty.js';
-
+// import { Kitten } from './models/kitty.js';
+const Kitten = require('./models/kitty')
 // Connection URL
-const url = 'mongodb://demo:demo@192.168.0.100:27017/demo_mongoose';
+const url = 'mongodb://demo:123456@127.0.0.1:27017/demo_mongoose';
 const collectionName = 'book';
 
-import mongoose from 'mongoose';
+// import mongoose from 'mongoose';
+const mongoose = require('mongoose')
 mongoose.connect(url, { useNewUrlParser: true });
 
 // for Connected
@@ -49,7 +50,7 @@ const MongoDo = (toDo) => {
 
 //   MongoDo(toDo);
 // };
-export { MongoDo };
+// export { MongoDo };
 // const insertOne2 = function (data = null, resultCB = () => {}, { name } = { name: collectionName }) {
 //   test.ok(!!data && data !== '');
 //   Log('Prepare to insert data', JSON.stringify(data), `to ${name}`);

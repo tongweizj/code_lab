@@ -1,0 +1,9 @@
+Nov 14 14:35:12 kernel:
+Nov 14 14:49:29 systemd-timesyncd[1166]:
+Nov 17 09:17:05 kernel:
+Nov 17 09:28:19 systemd-timesyncd[1169]:
+Nov 17 10:00:54 kernel:
+Nov 17 10:17:46 systemd-timesyncd[1166]:
+Nov 17 12:17:05 kernel:
+Nov 17 12:31:19 systemd-timesyncd[1176]:
+Nov 14 14:35:12 +BOOT,Nov 14 14:49:29 +TIMESYNC; Nov 17 09:17:05 +BOOT,Nov 17 09:28:19 +TIMESYNC; Nov 17 10:00:54 +BOOT,Nov 17 10:17:46 +TIMESYNC; Nov 17 12:17:05 +BOOT,Nov 17 12:31:19 +TIMESYNC;

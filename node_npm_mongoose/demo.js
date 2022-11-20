@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Kitten = require('./lib/models/kitty.js');
 
-const uri = 'mongodb://demo:demo@192.168.0.100:27017/demo_mongoose';
+const uri = 'mongodb://admin:123456@127.0.0.1:27017/demo_mongoose';
 mongoose.connect(uri, { useUnifiedTopology: true, useNewUrlParser: true });
 
 const connection = mongoose.connection;

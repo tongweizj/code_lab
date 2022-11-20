@@ -1,13 +1,13 @@
 const async = require('async');
 
 const mongoose = require('mongoose');
-const url = 'mongodb://demo:demo@192.168.0.100:27017/demo_mongoose';
+const url = 'mongodb://admin:123456@localhost:27017/demo_mongoose';
 const Web = require('../models/web.js');
 
 class DB {
-  constructor() {
-    mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
-  }
+  // constructor() {
+  //   mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
+  // }
 
   save(items) {
     async.mapLimit(
@@ -16,16 +16,16 @@ class DB {
       function (task, callback) {
         console.log('保存数据:' + task);
         // const Web = mongoose.model('web', { name: String });
-        const web = new Web({ name: task });
-        web.save().then(() => {
-          console.log('meow');
-          callback(null, task);
-        });
+        // const web = new Web({ name: task });
+        // web.save().then(() => {
+        //   console.log('meow');
+        //   callback(null, task);
+        // });
       },
       function (err, result) {
         console.log('一级页面抓取完成，共有数据：' + result.length);
         console.log(result);
-        mongoose.disconnect();
+        // mongoose.disconnect();
         console.log('MongoClient is closing...');
       }
     );

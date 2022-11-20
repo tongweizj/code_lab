@@ -1,8 +1,8 @@
 'use strict';
+const mongoose = require('mongoose');
+const MongoDo = require('./lib/mongodb')
+const Kitten = require('./lib/models/kitty')
 
-import { MongoDo } from './lib/mongodb.js';
-import { Kitten } from './lib/models/kitty.js';
-// const MongoDo = require('./mongodb.js');
 class Demo {
   static insertOne() {
     // insertOne();
