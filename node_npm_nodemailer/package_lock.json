@@ -1,0 +1,11 @@
+{
+  "requires": true,
+  "lockfileVersion": 1,
+  "dependencies": {
+    "nodemailer": {
+      "version": "6.7.5",
+      "resolved": "https://registry.npmjs.org/nodemailer/-/nodemailer-6.7.5.tgz",
+      "integrity": "sha512-6VtMpwhsrixq1HDYSBBHvW0GwiWawE75dS3oal48VqRhUvKJNnKnJo2RI/bCVQubj1vgrgscMNW4DHaD6xtMCg=="
+    }
+  }
+}
