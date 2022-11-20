@@ -3,8 +3,8 @@ const Crawler = require('crawler');
 
 const TaskQueue = require('../crawler/taskQueue');
 const logger = require('../utils/log');
-const Spider2 = require('./spider2');
-const DB = require('../lib/mongo');
+// const Spider2 = require('./spider2');
+// const DB = require('../lib/mongo');
 let count = 0; // 已采集总数
 
 function spider() {
@@ -44,10 +44,10 @@ function spider() {
       console.log('一级页面抓取完成，共有数据：' + result.length);
       console.log(result);
       console.log('Setp2: 存储数据！');
-      db = new DB();
-      db.save(result);
+      // db = new DB();
+      // db.save(result);
       console.log('----------------------------');
-      Spider2();
+      // Spider2();
     }
   );
 }
