@@ -1,0 +1,10 @@
+{
+  "name": "simple_blog",
+  "version": "0.0.1",
+  "main": "blog.js",
+  "author": "Patrick Rottlaender",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "4.17.1"
+  }
+}
