@@ -1,0 +1,10 @@
+{
+  "name": "lesson6",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "mocha": "^8.2.1",
+    "should": "^13.2.3"
+  }
+}

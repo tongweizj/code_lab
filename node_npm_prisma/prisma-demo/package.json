@@ -1,16 +1,21 @@
 {
-  "name": "koa_restful_api",
+  "name": "prisma-demo",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
+  "devDependencies": {
+    "prisma": "^4.6.1"
+  },
   "dependencies": {
-    "koa": "^2.13.4",
-    "koa-bodyparser": "^4.3.0",
-    "koa-router": "^12.0.0"
+    "@prisma/client": "^4.6.1",
+    "@koa/router": "12.0.0",
+    "koa": "2.13.4",
+    "koa-body": "6.0.1"
   }
 }
