@@ -20,6 +20,7 @@ model users {
   username String  @unique(map: "users_username_unique") @db.VarChar(255)
   password String  @db.VarChar(255)
   admin    Boolean @default(false)
+  extendedPetsData Json?
 }
 
 model op_pond_pi_env {
@@ -30,3 +31,4 @@ model op_pond_pi_env {
   ping_avg_speed   Float?  @db.Real
   ping_max_speed   Float?  @db.Real
 }
+

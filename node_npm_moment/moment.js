@@ -3,45 +3,54 @@ const moment = require("moment");
 // 这个文件,主要测试 moment 库的使用
 // const moment = require('moment-timezone');
 
-// 获取当前时间,这个时间是带时区的
-const trtDayStamp = moment().tz("America/Toronto").startOf("day").valueOf();
-console.log("1.trtDayStamp ", trtDayStamp);
+// 时间点
+const momentTtr = moment().tz("America/Toronto");
+const momentNow = moment();
+const momentStamp = momentTZ(1672876799999).tz("America/Toronto");
+const momentDate = momentTZ(new Date("2022-12-05")).tz("America/Toronto");
 
-const now = moment();
-console.log("1.now ", now);
-// 1.moment()  Moment<2022-12-05T11:27:39-05:00>, 取本地环境的时间
-console.log("1.now ", now.valueOf());
+// 获取 startOf & endOf
+// momentTtr
+console.log("1.trtDayStamp ", momentTtr.startOf("day").valueOf());
+
+console.log("6.yearTZDay stamp", momentTtr.startOf("year").valueOf());
+
+// momentNow
+// console.log("1.now ", momentNow);
+// Moment<2022-12-05T11:27:39-05:00>, 取本地环境的时间
+
+// console.log("1.now ", now.valueOf());
 // 本周一的 0 时 0 分 0 秒
-const nowDay = now.startOf("day");
-console.log("2.nowDay ", nowDay);
-console.log("3.nowDay stamp", nowDay.valueOf());
+
+// const nowDay = momentNow.startOf("day");
+// console.log("2.nowDay ", nowDay);
+
+// console.log("3.nowDay stamp", nowDay.valueOf());
 // 2.nowDay  Moment<2022-12-05T00:00:00-05:00> 本周一
 
-let nowTZ = momentTZ().tz("America/Toronto");
-console.log("4.momentTZ() stamp", nowTZ.valueOf());
-console.log("4.momentTZ() stamp", nowTZ);
-nowTZ = momentTZ().tz("Asia/Shanghai");
-console.log("4.1 momentTZ() stamp", nowTZ.valueOf());
-console.log("4.1 momentTZ() stamp", nowTZ);
-// 4.momentTZ() stamp   1670265116374
-// 4.1 momentTZ() stamp 1670265116389
-// 因为取的是当前的时间,用不同时区表现,是一个时间戳
-
-const nowTZDay = nowTZ.startOf("day");
-console.log("5.nowTZDay ", nowTZDay);
-const yearTZDay = nowTZ.startOf("year");
-console.log("6.yearTZDay stamp", yearTZDay.valueOf());
-
+// 指定日期
 const dateStr = "2022-12-05";
 const dateToday = new Date(dateStr);
 const dateS = momentTZ(dateToday)
   .tz("America/Toronto")
   .startOf("year")
   .valueOf();
-console.log("6.1 year stamp", dateS);
+// console.log("6.1 year stamp", dateS);
 
+// 用时间戳,直接获得当周\当年第一天的时间戳
+const dateStr1 = "2023-01-05";
+const dateToday1 = new Date(dateStr1) - 1;
+console.log("6.1 date stamp", dateToday1);
+const dateS1 = momentTZ(1672876799999)
+  .tz("America/Toronto")
+  .startOf("year")
+  .valueOf();
+
+console.log("6.2.year stamp", dateS1);
+
+const dayStamp = momentTtr.startOf("day").valueOf();
+const weekStamp = momentTtr.startOf("isoweek").valueOf();
 const nowUTC = momentTZ().utcOffset(0);
-console.log("7.nowUTC stamp", nowUTC.valueOf());
 
 // 1641013200000
 // Assuming that this timestamp is in milliseconds:
@@ -61,19 +70,44 @@ const siteTime = moment(LocalUnix).tz(siteTZ);
 const siteDay = siteTime.day();
 const siteHour = siteTime.hour();
 
-const start_time = moment(LocalUnix).tz(siteTZ).format("MM/DD/YYYY HH:mm:ss");
+const start_time = moment(1672876799999).tz(siteTZ).format("MM/DD/YYYY"); //MM/DD/YYYY HH:mm:ss
 
 console.log("siteDay, siteHour,start_time: ", siteDay, siteHour, start_time);
 
-// yesterday's date
-const yesterday = moment().tz("America/Toronto");
-// 1. Get yesterday date with current timing
-const yesterdayCurrentTiming = yesterday.toString();
-console.log("yesterdayCurrentTiming:", yesterdayCurrentTiming);
-// 2. Get yesterday date with start of the day
-const yesterdayStart = yesterday.startOf("day").toString();
-console.log("yesterdayStart:", yesterdayStart);
+// today's date
+
+console.log("today CurrentTiming:", momentTtr.toString());
+
+// 2. Get today date with start of the day
+const todayStart = momentTtr.startOf("day").toString();
+console.log("todayStart:", todayStart);
 
 // 3. Get yesterday date with end of the day
-const yesterdayEnd = yesterday.endOf("day").toString();
-console.log("yesterdayEnd:", yesterdayEnd);
+const todayEnd = momentTtr.endOf("day").toString();
+console.log("todayEnd:", todayEnd);
+
+// 2. Get today date with start of the day
+console.log("todayStart:", momentTtr.startOf("day").valueOf());
+
+// 3. Get yesterday date with end of the day
+console.log("todayEnd:", momentTtr.endOf("day").valueOf());
+
+console.log("weekStart:", momentTtr.startOf("week").valueOf());
+console.log("isoweekStart:", momentTtr.startOf("isoweek").valueOf());
+
+console.log("weekEnd:", momentTtr.endOf("week").valueOf());
+console.log("isoweekEnd:", momentTtr.endOf("isoweek").valueOf());
+// 取昨天的开始和结束
+stampStart = momentTtr.subtract(1, "days").startOf("day").valueOf();
+stampEnd = momentTtr.endOf("day").valueOf();
+console.log("yesterdayStart:", stampStart);
+console.log("yesterdayEnd:", stampEnd);
+
+// 第 n 天
+console.log("今年是:", momentTtr.year());
+console.log("月份:", momentTtr.month() + 1);
+console.log("月份:", momentTtr.format("MM"));
+console.log("这个月,第几天:", momentTtr.format("DD")); //   days());
+console.log("现在小时是:", momentTtr.format("HH"));
+console.log("现在分钟是:", momentTtr.format("mm"));
+console.log("今年是:", momentTtr.daysInMonth());
