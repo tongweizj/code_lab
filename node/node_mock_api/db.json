@@ -1,0 +1,11 @@
+{
+  "posts": [
+    { "id": 1, "title": "post 1", "author": "John Doe" },
+    { "id": 2, "title": "post 2", "author": "Jane Doe" }
+  ],
+  "comments": [
+    { "id": 1, "body": "comment 1", "postId": 1 },
+    { "id": 2, "body": "comment 2", "postId": 2 },
+    { "id": 3, "body": "comment 3", "postId": 2 }
+  ]
+}
