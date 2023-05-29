@@ -3,6 +3,7 @@ from flask import jsonify
 
 app = Flask(__name__)
 
+
 @app.route('/hello/', methods=['GET', 'POST'])
 def welcome():
     return "Hello World!"
@@ -12,14 +13,17 @@ def welcome():
 def incrementer(number):
     return "Incremented number is " + str(number+1)
 
+
 @app.route('/<string:name>/')
 def hello(name):
     return "Hello " + name
 
+
 @app.route('/person/')
 def hellojson():
-    return jsonify({'name':'Jimit',
-                    'address':'India'})
+    return jsonify({'name': 'Jimit',
+                    'address': 'India'})
+
 
 app.run()
 # if __name__ == '__main__':
