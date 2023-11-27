@@ -1,7 +1,7 @@
-import "./App.css";
+import "../App.css";
 import { useState } from "react";
 
-function FeedbackForm({onSubmit}) {
+function FeedbackForm({ onSubmit }) {
   const [score, setScore] = useState("10");
   const [comment, setComment] = useState("");
 
@@ -13,7 +13,7 @@ function FeedbackForm({onSubmit}) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit({score, comment});
+    onSubmit({ score, comment });
   };
 
   return (
