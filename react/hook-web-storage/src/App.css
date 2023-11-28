@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.4;
+  background: #fff;
+  color: #444;
+}
+
+.container {
+  max-width: 500px;
+  margin: 6rem auto 4rem;
+  padding: 0 10px;
+}
+
+h1 {
+  font-size: 23px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+input {
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  width: 100%;
+  font-size: 1rem;
+}
+
+input[type="text"] {
+  height: 40px;
+  padding: 0.5rem 1rem;
+  border: 1px solid #999;
+}
+
+input[type="submit"] {
+  background-color: #000000;
+  border: none;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  height: 40px;
+  cursor: pointer;
+}
+
+input:focus {
+  outline: none;
+  border-color: #000000;
+}
+
+input[type="checkbox"] {
+  display: inline-block;
+  width: auto;
+}
