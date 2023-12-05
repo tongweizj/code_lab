@@ -2,7 +2,8 @@ import { useState } from "react";
 
 function UseStateBasic() {
   const [count, setCount] = useState(0);
-
+  console.log("count:", count);
+  console.log("setCount,", setCount);
   return (
     <>
       <div className="card">

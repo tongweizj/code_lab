@@ -1,4 +1,3 @@
-import "./App.css";
 import { useState } from "react";
 import { validateEmail } from "./utils";
 
@@ -8,7 +7,7 @@ const PasswordErrorMessage = () => {
   );
 };
 
-function App() {
+function SignUp() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -24,7 +23,7 @@ function App() {
       firstName &&
       validateEmail(email) &&
       password.value.length >= 8 &&
-      role !== 'role'
+      role !== "role"
     );
   };
 
@@ -35,7 +34,7 @@ function App() {
     setEmail("");
     setPassword({
       value: "",
-      isTouched: false
+      isTouched: false,
     });
     setRole("role");
   };
@@ -58,7 +57,7 @@ function App() {
             <input
               type="text"
               value={firstName}
-              onChange={e => setFirstName(e.target.value)}
+              onChange={(e) => setFirstName(e.target.value)}
               placeholder="First name"
             />
           </div>
@@ -67,7 +66,7 @@ function App() {
             <input
               type="text"
               value={lastName}
-              onChange={e => setLastName(e.target.value)}
+              onChange={(e) => setLastName(e.target.value)}
               placeholder="Last name"
             />
           </div>
@@ -78,7 +77,7 @@ function App() {
             <input
               type="email"
               value={email}
-              onChange={e => setEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="Email address"
             />
           </div>
@@ -97,7 +96,9 @@ function App() {
               }}
               placeholder="Password"
             />
-            {password.isTouched && password.value.length < 8 ? (<PasswordErrorMessage />) : null}
+            {password.isTouched && password.value.length < 8 ? (
+              <PasswordErrorMessage />
+            ) : null}
           </div>
           <div className="Field">
             <label>
@@ -118,4 +119,4 @@ function App() {
   );
 }
 
-export default App;
+export default SignUp;
